@@ -1,5 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 /* Alterando o Box Model */
 * { box-sizing: border-box; }
+
+
+:root {
+    --cor-titulo: #4d4d4d;
+    --cor-texto: #333;
+    --cor-escura: #000;
+    --cor-clara: #fff;
+    --cor-intermediaria: #ececec;
+}
 
 /* Reset de alguns elementos */
 body, h1, h2, p, figure, .links-menu {
@@ -8,3 +20,152 @@ body, h1, h2, p, figure, .links-menu {
 }
 
 img { max-width: 100%; }
+
+body {
+    font-family: "noto sans", sans-serif;
+    color: var(--cor-texto)
+}
+
+a {
+     text-decoration: none;
+}
+
+.titulo {
+    font-family: raleway, sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.titulo a {
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    padding: 0.3rem 1rem;
+    border-radius: 4px;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: var(--cor-clara);
+}
+
+.titulo-menu a{
+    color: var(--cor-escura);
+    font-size: 1,2rem;
+    padding: 1rem;
+    display: inline-block;
+}
+
+.menu a:hover {
+    background-color: var(--cor-intermediaria);   
+}
+
+.links-menu {
+    display: none;
+}
+.links-menu a {
+    color: var(--cor-escura);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.links-menu.aberto {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: var(--cor-clara);
+}
+
+.destaque {
+    height: 75vh;
+    background-image: url(../imagens/fundo-destaque.jpg);
+    color: var(--cor-clara);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-attachment: fixed;
+}
+
+@keyframes animaDestaque{
+    from {
+        opacity: 0;
+        transform: translateY(-500px) scale(2);
+    }
+    to {
+        opacity: 1;
+        transform: translateY();
+    }
+}
+
+.destaque h2, .destaque p {
+    animation-name: animaDestaque;
+    animation-duration: 2s;
+}
+
+.destaque h2 {
+    font-size: clamp(3rem, 10vw, 7rem);
+}
+.destaque p {
+    font-size: clamp(1.5rem, 3vw, 3rem);
+}
+
+article h2 {
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-family: raleway, sans-serif;
+}
+
+article p {
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+}
+ article address {
+    font-style: normal;
+    font-size: 1.2rem;
+ }
+
+ .front-end, .historia, .localizacao {
+    text-align: center;
+ }
+
+ .historia {
+    background-image: url(../imagens/fundo-madeira.jpg);
+    background-attachment: fixed;
+ }
+
+ .historia h2 {
+    color: var(--cor-clara);
+    text-shadow: red 2px 2px 10px;
+ }
+
+ .historia iframe {
+    max-width: 700px;
+    width: 100%;
+    margin-bottom: 2rem;
+ }
+
+ .localizacao iframe{
+    width: 100%;
+    margin-top: 2rem;
+ }
+
+ .rodape {
+     background-color: #000;
+     color: var(--cor-clara);
+     height: 30vh;
+     font-weight: bold;
+     text-align: center;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+ }
