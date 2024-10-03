@@ -50,8 +50,21 @@ a {
     align-items: center;
     position: sticky;
     top: 0;
-    background-color: var(--cor-clara);
+    background-color: var(--cor-clara);   
 }
+
+.limitador{
+    width: 95vw;
+    max-width: 1000px;
+    margin: auto;
+
+}
+
+.topo .limitador {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+ }
 
 .titulo-menu a{
     color: var(--cor-escura);
@@ -169,3 +182,99 @@ article p {
     justify-content: center;
     align-items: center;
  }
+
+ .conteudo-geral {
+    background-color: var(--cor-intermediaria);
+    padding: 0.5rem;
+ }
+
+ .conteudo-geral h2 {
+    padding-left: 0;
+    font-size: 1.8rem;
+    border-bottom: solid 1px;
+
+ }
+ table {
+    border: solid 4px var(--cor-escura);
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    border-collapse: collapse;
+ }
+
+ caption {
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 3px;
+ }
+
+ th, td {
+    border: solid 3.4px var(--cor-escura);
+ }
+
+ th {
+    background-color: var(--cor-texto);
+    color: var(--cor-clara);
+ }
+ td:nth-child(2){
+    text-align: center;
+    
+ }
+ td:nth-child(3){
+    text-align: end
+    ;
+ }
+ tr:nth-child(even) {
+    background-color: rgb(165, 165, 165);
+ }
+.galeria{
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    
+}
+
+.galeria img {
+    border-radius: 50%;
+    box-shadow:  #000 12px 12px 30px;
+    align-items: center;
+    transition: all 0.5s;
+    transform: rotate(-6deg);
+
+    
+ }
+
+ .galeria img:hover {
+    transform: scale(1.2) rotate(2deg) translateY(-20px);
+    transition: 0.7s;
+
+ }
+
+ figure:hover .card{
+    opacity: .2;
+ }
+
+ figure .card:hover {
+    opacity: 1; 
+ }
+    
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
