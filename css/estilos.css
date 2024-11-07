@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
-    box-sizing: border-box;
-}
+/* Alterando o Box Model */
+* { box-sizing: border-box; }
 
+/* Declaração de variáveis (sempre no :root) */
 :root {
     --cor-titulo: #4d4d4d;
     --cor-texto: #333;
@@ -12,39 +12,29 @@
     --cor-intermediaria: #ececec;
 }
 
-/* Valor de referência/base para o uso  da medida REM */
-html {
-    font-size: 16px;
-}
+/* Valor de referência/base
+para uso da medida REM */
+html { font-size: 16px; }
 
-
-body,
-h1,
-h2,
-p,
-figure,
-.links-menu {
+/* Reset de alguns elementos */
+body, h1, h2, p, figure, .links-menu {
     margin: 0;
     padding: 0;
 }
 
-img {
-    max-width: 100%;
-}
+img { max-width: 100%; }
 
 body {
-    font-family: "noto-sans", sans-serif;
+    font-family: "Noto Sans", sans-serif;
     color: var(--cor-texto);
 }
 
-a {
-    text-decoration: none;
-}
+a { text-decoration: none; }
 
 .titulo {
     font-family: Raleway, sans-serif;
     text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 800; /* extra bold */
     font-size: 1.5rem;
 }
 
@@ -53,34 +43,37 @@ a {
     color: var(--cor-clara);
     padding: 0.3rem 1rem;
     border-radius: 4px;
-
 }
 
+/* Cabeçalho/Topo "cheio", ou seja, pegando 100% da tela/fixado. */
 .topo {
-
     position: sticky;
     top: 0;
     background-color: var(--cor-clara);
     z-index: 10;
 }
 
+/* div com a classe limitador DENTRO do topo (sub-cabeçalho):
+aplicamos os ajustes de layout (flex) */
 .topo .limitador {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* classe que será aplicada em algumas partes do site visando criar limites de tamanho */
+/* Classe que será aplicada em algumas partes do site visando criar limites de tamanho. */
 .limitador {
     width: 95vw;
     max-width: 1000px;
     margin: auto;
+    /* background-color: yellow; */
 }
 
 .titulo-menu a {
     color: var(--cor-escura);
     font-size: 1.2rem;
     padding: 1rem;
+    /* background-color: yellow; */
     display: inline-block;
 }
 
@@ -88,8 +81,8 @@ a {
     background-color: var(--cor-intermediaria);
 }
 
-.links-menu {
-    list-style: none;
+.links-menu { 
+    list-style: none; 
     display: none;
 }
 
@@ -103,18 +96,27 @@ a {
 }
 
 .links-menu.aberto {
+    /* Usamos o flex para fazer os links
+    aparecerem e ao mesmo ter acesso a
+    todas as vantagens do flex. */
     display: flex;
+
+    /* Fazemos com que os links fiquem
+    dispostos como coluna (verticalmente) */
     flex-direction: column;
+
+    /* Usamos o position absolute para "soltar" a lista de links na tela e com as propriedades/coordenadas
+    left e right ajustar sua posição em relação às laterais. */
     position: absolute;
     left: 0;
     right: 0;
+
     background-color: var(--cor-clara);
 }
 
 .destaque {
     height: 75vh;
     background-image: url(../imagens/fundo-destaque.jpg);
-    color: var(--cor-clara);
     background-attachment: fixed;
     color: var(--cor-clara);
     text-align: center;
@@ -123,42 +125,43 @@ a {
     justify-content: center;
 }
 
+/* Etapa 1: criar regra de animação */
 @keyframes animaDestaque {
-    from {
+    /* Dê (como começa) */
+    from { 
         opacity: 0;
         transform: scale(0.5);
     }
 
-    to {
-        opacity: 1;
+    /* Para (como termina) */
+    to { 
+        opacity: 1; 
         transform: scale(1);
     }
 }
 
-.destaque h2,
-.destaque p {
+/* Etapa 2: aplicar a animação */
+.destaque h2, .destaque p {
     color: var(--cor-clara);
     animation-name: animaDestaque;
     animation-duration: 0.5s;
 
-
-    /* opções adicionais */
+    /* Opções adicionais */
     /* animation-iteration-count: infinite; */
     /* animation-direction: alternate; */
 }
 
-.destaque h2 {
-    font-size: clamp(3rem, 10vw, 7rem);
-}
 
-.destaque p {
-    font-size: clamp(1.5rem, 3vw, 3rem);
-}
+/* Função clamp()
+Usada para definir um valor que se ajusta dinamicamente
+entre um valor MÍNIMO, IDEAL/FLEXÍVEL/VARIÁVEL e MÁXIMO. */
+.destaque h2 { font-size: clamp(3rem, 10vw, 7rem); }
+.destaque p { font-size: clamp(1.5rem, 3vw, 3rem); }
 
 article h2 {
     padding: 1rem;
     font-size: 1.4rem;
-    font-family: raleway, sans-serif;
+    font-family: Raleway, sans-serif;
     color: var(--cor-titulo);
 }
 
@@ -172,12 +175,11 @@ article address {
     font-size: 1.2rem;
 }
 
-.front-end,
-.historia,
-.localizacao {
+.front-end, .historia, .localizacao {
     text-align: center;
 }
 
+/* Exercícios (correção) */
 .historia {
     background-image: url(../imagens/fundo-madeira.jpg);
     background-size: cover;
@@ -201,19 +203,22 @@ article address {
 }
 
 .rodape {
-    background-color: var(--cor-escura);
-    color: var(--cor-clara);
-    height: 20vh;
+    background-color: var(--cor-escura);  
+    color: var(--cor-clara);  
+    height: 30vh;
     font-weight: bold;
     display: flex;
     justify-content: center;
-    text-align: center;
     align-items: center;
+    text-align: center;
 }
 
+
+/* Regras para as demais páginas (Produtos, Serviços e Contato) */
 .conteudo-geral {
     background-color: var(--cor-intermediaria);
     padding: 0.5rem;
+
 }
 
 .conteudo-geral h2 {
@@ -228,7 +233,9 @@ table {
     width: 80%;
     max-width: 600px;
     margin: auto;
-    /* remove o espaçamento entre as bordas */
+
+    /* Remove o espaçamento
+    entre as bordas */
     border-collapse: collapse;
 }
 
@@ -238,8 +245,7 @@ caption {
     padding-bottom: 0.3rem;
 }
 
-th,
-td {
+th, td {
     border: solid 1px var(--cor-escura);
 }
 
@@ -249,46 +255,36 @@ th {
     padding: 0.5rem;
 }
 
-td {
-    padding: 0.4rem;
-}
+td { padding: 0.4rem; }
 
-/* selecionando os segundos <td> */
-td:nth-child(2) {
-    text-align: center;
-}
+/* Selecionando os segundos <td> */
+td:nth-child(2){ text-align: center; }
 
-td:last-child,
-th:last-child {
+/* Selecionando os últimos <th> e <td> */
+td:last-child, th:last-child {
     text-align: right;
 }
 
-
-/* selecionando linhas alternadas. podemos usar even (pares) ou odd (ímpares) */
-tr:nth-child(even) {
+/* Selecionando linhas alternadas.
+Podemos usar even (par) ou odd (ímpar). */
+tr:nth-child(even){
     background-color: var(--cor-clara);
 }
 
-.galeria {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-
-}
+.galeria  { text-align: center; }
 
 .galeria img {
     border-radius: 50%;
+    box-shadow: var(--cor-escura) 0 0 10px;
+    transform: scale(0.8) rotate(-20deg);
     transition: 0.5s;
-    box-shadow: var(--cor-escura) 0 0 20px;
 }
 
-.galeria IMG:hover {
-    transform: scale(1.2) rotate(70deg);
-    transition: 0.8s;
+.galeria img:hover {
+    transform: scale(1);
 }
 
+/* Regras para o formulário de contato */
 form {
     max-width: 500px;
     margin: auto;
@@ -300,13 +296,9 @@ label {
     color: var(--cor-texto);
 }
 
-form div {
-    margin-bottom: 1rem;
-}
+form div { margin-bottom: 1rem; }
 
-input,
-select,
-textarea {
+input, select, textarea {
     width: 100%;
     border: none;
     padding: 6px;
@@ -314,40 +306,63 @@ textarea {
     border-radius: 4px;
 }
 
-textarea {
-    height: auto;
+textarea { height: auto; }
+
+button {
+    border: none;
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 4px;
 }
 
-/* Regras condicionais usando Media Quaries */
-@media screen and (min-width:600px) {
-    .titulo-menu {
-        display: none;
-    }
-
+button:hover, button:focus {
+    background-color: darkblue;
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
-/* exibindo links do menu */
-
-.links-menu {
+#area-do-cep {
     display: flex;
+    justify-content: space-between;
 }
 
-.menu {
+#cep { width: 50%; }
 
-    width: 60%;
+#buscar { 
+    width: 49%;
+    padding: 12px;
 }
 
-.links-menu li {
-    width: 100%;
+.campos-restantes { display: none; }
+
+
+/* Regras Condicionais usando Media Queries */
+@media screen and (min-width: 600px){
+    /* Escondendo a palavra Menu */
+    .titulo-menu { display: none; }
+
+    /* Exibindo os links do menu */
+    .links-menu { display: flex; }
+
+    /* Ajustamos o tamanho do menu (nav) fazendo-o "esticar",
+    aumentando o espaçamento dentro dele. */
+    .menu { width: 60%; }
+
+    /* Forçamos cada item (li) da lista a ter largura total e,
+    com isso, redistribuir e ocupar todos os espaços dentro do menu (nav) */
+    .links-menu li { width: 100%; }
 }
 
-/* aumemntamos a  da base font size*/
-@media screen and (min-width: 1000px) {
-    html {
-        font-size: 20px;
-    }
 
-    .topo .limitador {
-        height: 100px;
-    }
+@media screen and (min-width: 1000px){
+    /* Aumentamos o tamanho base do font-size. Desta forma,
+    todos os textos do site (em especial os que usam REM), 
+    mudam de tamanho proporcionalmente. */
+    html { font-size: 20px; }
+
+    /* Aumentamos a altura da div.limitador contida
+    no topo (header) */
+    .topo .limitador { height: 100px; }
 }

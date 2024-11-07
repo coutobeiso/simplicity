@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos - Simplicity</title>
+    <title>Serviços - Simplicity</title>
+
+    <link rel="stylesheet" href="lightbox/css/lightbox.min.css">
 
     <link rel="stylesheet" href="css/estilos.css">
 
@@ -27,6 +29,7 @@
     </header>
 
     <main class="conteudo">
+
         <article class="conteudo-geral limitador">
             <h2>Serviços</h2>
 
@@ -36,8 +39,6 @@
                 desempenho, segurança e uma experiência de usuário excepcional em todas as plataformas.
             </p>
 
-           
-            
             <p>
                 O design gráfico é essencial para a identidade visual de qualquer marca. Nossa equipe de designers
                 talentosos cria logotipos, materiais promocionais e interfaces de usuário que destacam sua marca.
@@ -49,12 +50,20 @@
                 público-alvo. Nosso objetivo é impulsionar seu negócio e maximizar seu retorno sobre investimento.
             </p>
 
+            <!-- aqui colocaremos as miniaturas e links da galeria de fotos -->
             <figure class="galeria">
-                <a href="">  <img src="imagens/consultoria-treinamento-mini.jpg" alt="" class="card"></a>
-              <a href=""><img src="imagens/desenvolvimento-web-mini.jpg" alt="" class="card"></a>
-                <a href=""><img src="imagens/design-grafico-mini.jpg" alt="" class="card"></a>
-                <a href=""><img src="imagens/marketing-digital-mini.jpg" alt="" class="card"></a>
-                
+                <a data-lightbox="fotos" href="imagens/consultoria-treinamento.jpg">
+                    <img src="imagens/consultoria-treinamento-mini.jpg" alt="">
+                </a>
+                <a data-lightbox="fotos"  href="imagens/desenvolvimento-web.jpg">
+                    <img src="imagens/desenvolvimento-web-mini.jpg" alt="">
+                </a>
+                <a data-lightbox="fotos"  href="imagens/design-grafico.jpg">
+                    <img src="imagens/design-grafico-mini.jpg" alt="">
+                </a>
+                <a data-lightbox="fotos"  href="imagens/marketing-digital.jpg">
+                    <img src="imagens/marketing-digital-mini.jpg" alt="">
+                </a>
             </figure>
 
             <p>
@@ -72,12 +81,25 @@
                 Do desenvolvimento web ao marketing digital, passando pelo design gráfico e consultoria, estamos
                 comprometidos em oferecer soluções completas e eficazes para o crescimento do seu negócio.
             </p>
+
         </article>
+
     </main>
 
     <footer class="rodape">
         <p>Site desenvolvido para fins educacionais.</p>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>  
+
+
+
+
+    <script src="lightbox/js/lightbox.min.js"></script>
+
+
+
+    <script src="js/menu.js"></script>
 </body>
 
 </html>
